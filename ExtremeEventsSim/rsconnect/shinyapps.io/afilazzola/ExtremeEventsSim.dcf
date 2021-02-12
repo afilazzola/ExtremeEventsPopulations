@@ -1,0 +1,13 @@
+name: ExtremeEventsSim
+title: ExtremeEventsSim
+username:
+account: afilazzola
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3630281
+bundleId: 4216097
+url: https://afilazzola.shinyapps.io/ExtremeEventsSim/
+when: 1613158607.28245
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: simulatedPopulation.csv
