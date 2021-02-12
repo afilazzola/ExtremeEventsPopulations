@@ -13,11 +13,16 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Simluation of Population Extremes"),
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
+            
+            numericInput("iter", label = h3("Number of Years"), value = 50),
+            
+            hr(),
+            fluidRow(column(3, verbatimTextOutput("value"))),
             sliderInput("Ninitial",
                         "Initial Population Size:",
                         min = 1,
@@ -32,7 +37,13 @@ shinyUI(fluidPage(
                 "Carrying Capacity:",
                 min = 100,
                 max = 1000,
-                value = 100)
+                value = 500),
+        sliderInput("climVar",
+                    "Climate Variability:",
+                    min = 0,
+                    max = 1,
+                    value = 0.2),
+        downloadButton("demo", label = "Download Data"),
         ),
 
         # Show a plot of the generated distribution
