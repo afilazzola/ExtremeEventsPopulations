@@ -13,7 +13,7 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Simluation of Population Extremes"),
+    titlePanel("Simulation of Population Extremes"),
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(
