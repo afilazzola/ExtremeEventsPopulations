@@ -17,6 +17,7 @@ shinyServer(function(input, output) {
         K <- input$Kcapacity
         climVar <- input$climVar
         iter <- input$iter
+        severe <- input$severe
         
         ## Range of years
         yearRange <- seq(as.Date("1971/01/01"), by = "year", length.out = iter)
@@ -34,7 +35,7 @@ shinyServer(function(input, output) {
         ## Create simulated population
         simPop <- data.frame( "date"= yearRange ,
                               abundance= dNt(N0 = N0,  r = r , K = K, iter=iter, Rclim=Rclim),
-                              abundanceExt= dNtExtreme(N0 = N0,  r = r , K = K, iter=iter, Rclim = Rclim))
+                              abundanceExt= dNtExtreme(N0 = N0,  r = r , K = K, iter=iter, Rclim = Rclim, severity = severe))
         
         
         ### Plot population without extreme event
@@ -49,6 +50,7 @@ shinyServer(function(input, output) {
         K <- input$Kcapacity
         climVar <- input$climVar
         iter <- input$iter
+        severe <- input$severe
         
         ## Range of years
         yearRange <- seq(as.Date("1971/01/01"), by = "year", length.out = iter)
@@ -66,7 +68,7 @@ shinyServer(function(input, output) {
         ## Create simulated population
         simPop <- data.frame( "date"= yearRange ,
                               abundance= dNt(N0 = N0,  r = r , K = K, iter=iter, Rclim=Rclim),
-                              abundanceExt= dNtExtreme(N0 = N0,  r = r , K = K, iter=iter, Rclim = Rclim))
+                              abundanceExt= dNtExtreme(N0 = N0,  r = r , K = K, iter=iter, Rclim = Rclim, severity = severe))
 
         
         ### Plot population with extreme event

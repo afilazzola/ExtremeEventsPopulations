@@ -43,6 +43,9 @@ shinyUI(fluidPage(
                     min = 0,
                     max = 1,
                     value = 0.2),
+        numericInput("severe",
+                    label="Population crash of extreme event (%):",
+                    value = 5),
         downloadButton("demo", label = "Download Data"),
         ),
 
